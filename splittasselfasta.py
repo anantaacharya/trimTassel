@@ -78,7 +78,7 @@ def SNPposIUPAC(infile, outfile):
             #print pos
             if pos:
                 #modify string to accomodate position of string
-                bufferw+=">"+TP+"|"+str(pos[0])+"\n"+query[1:pos[0]+1]+pos[1]+line[pos[0]+2::]+"\n"
+                bufferw+=">"+TP+"|"+str(pos[0])+"\n"+query[0:pos[0]+1]+pos[1]+query[pos[0]+2::]+"\n"
 
             eachline=1
     outf=open(outfile,"a")
