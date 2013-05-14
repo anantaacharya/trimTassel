@@ -97,7 +97,7 @@ def searchdatabasedirect(database, newFasta, outFasta):
     
     
     same=set.intersection(set(newSNPdict.keys()),set(SNPdict.keys()))
-    
+    #diff=set(newSNPdict.keys())-set(SNPdict.keys())
     print str(len(newSNPdict))+"items searched\n"
     print str(len(same))+"items found\n"
     print str(len(newSNPdict)-len(same))+"items not found\n"
@@ -108,6 +108,8 @@ def searchdatabasedirect(database, newFasta, outFasta):
         for key in sorted(matchdict.iterkeys()):
             outFastaout.write(key+"\t"+matchdict[key][0]+"\t"+matchdict[key][1])
             outFastaout.write("\n")
+
+    
   
     print str(len(matchdict))+" SNPs are matched to "+database
     print "matched SNPs written in"+outFasta
