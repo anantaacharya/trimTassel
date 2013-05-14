@@ -50,4 +50,23 @@ def IUPAC(n1,n2):
         return "N"
     
 
+     
+    
+def hamdist(str1, str2):
+    assert len(str1) == len(str2)
+    
+    ne = operator.ne
+    return sum(imap(ne, str1, str2))
 
+def compare(str1, str2):
+    mismatch=0
+    if len(str1)<>len(str2):
+        return False
+    for i in range(len(str1)):
+        
+            if str1[i]<>str2[i]:
+                mismatch+=1
+                if mismatch==2:
+                    return False
+    else:
+        return True

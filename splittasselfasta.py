@@ -66,19 +66,19 @@ def SNPposIUPAC(infile, outfile):
             
             eachline=2
         elif eachline==2:
-            query=line[1:lenn]
+            query=line[0:lenn]
             eachline=3
         elif eachline==3:
             eachline=4
             
         elif eachline==4:
-            hit=line[1:lenn]
+            hit=line[0:lenn]
             #print query, hit
             pos=SNPandpos(query,hit)
             #print pos
             if pos:
                 #modify string to accomodate position of string
-                bufferw+=">"+TP+"|"+str(pos[0])+"\n"+query[0:pos[0]+1]+pos[1]+query[pos[0]+2::]+"\n"
+                bufferw+=">"+TP+"|"+str(pos[0])+"\n"+query[0:pos[0]]+pos[1]+query[pos[0]+1::]+"\n"
 
             eachline=1
     outf=open(outfile,"a")
